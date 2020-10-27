@@ -1,4 +1,5 @@
 import datetime
+from calendar import monthrange
 
 def is_mod10_valid(number):
         """
@@ -19,15 +20,17 @@ def is_mod10_valid(number):
 
         return (tot % 10) == 0
 
-def is_expired(self):
+def is_expired(expiration_date):
         """
         Returns whether or not the expiration date has passed in American Samoa
         (the last timezone).
         """
 
-        self.expired_after = datetime.datetime(
-            year,
-            month,
+        _, day_count = monthrange(expiration_date.year, expiration_date.month)
+
+        expired_after = datetime.datetime(
+            expiration_date.year,
+            expiration_date.month,
             day_count,
             23,
             59,
@@ -42,4 +45,4 @@ def is_expired(self):
         samoa_now = utcnow - datetime.timedelta(hours=11)
 
         # Return whether the exipred after time has passed in American Samoa
-        return samoa_now > self.expired_after
+        return samoa_now > expired_after
