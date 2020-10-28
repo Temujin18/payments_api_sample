@@ -1,0 +1,8 @@
+{
+    "credit_card_number": "378282246310000",
+    "card_holder" : "John Exim",
+    "expiration_date" : "2032-04-23T10:20:30.400+02:30",
+    "security_code" : null,
+    "amount" : 1000
+  }
+  
