@@ -1,6 +1,6 @@
 import random
 
-class PayProcessors():
+class PayProcessors(object):
 
     SUCCESS_MESSAGE = {"message" : "Your payment was successfully processed."}
     FAIL_MESSAGE = {"message" : "Your payment was NOT processed."}
@@ -15,7 +15,7 @@ class PayProcessors():
     @classmethod
     def process_expensive(cls):
         if is_expensive_gateway_available():
-            return SUCCESS_MESSAGE
+            return cls.SUCCESS_MESSAGE
         else:
             cls.process_cheap()
 
